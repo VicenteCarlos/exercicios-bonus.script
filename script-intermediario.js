@@ -141,13 +141,13 @@ const calculatorOfIMC = (height, weight) => {
     const result = weight / (height * height)
 
     if (result < 18.5) {
-        return "Abaixo do peso"
+        return "Abaixo do peso\n"
     } else if (result > 18.5 && result < 24.9) {
-        return "Normal"
+        return "Normal\n"
     } else if (result > 24.9 && result < 30) {
-        return "Sobrepeso"
+        return "Sobrepeso\n"
     } else if (result > 30) {
-        return "Obesidade"
+        return "Obesidade\n"
     } 
 }
 
@@ -155,6 +155,27 @@ console.log(calculatorOfIMC(1.76, 40))
 
 /* ------------- */
 
+/* 
+  Camille é dona de uma sapataria onde todas as pessoas da área de vendas 
+  recebem um salário fixo acrescido de 4% de comissão sobre as vendas. 
+  A dona da sapataria precisa da sua ajuda para desenvolver um programa que recebe o 
+  salário fixo dos vendedores da sapataria e o valor de suas vendas,  
+  calculando e retornando a comissão e seu salário final no seguinte formato:
+
+*"A comissão é: x e o ganho total é: y".*
+*/ 
+
+const sale = [["Sapato caro", 500], ["Sapato intermediário", 250], ["Sapato de entrada", 50]]
+
+const calculatorOfMoney = (fixeValue, sale) => {
+    sale.forEach(item => console.log(`Produto vendido: ${item[0]}, R$ ${item[1]}\n`));
+    sale.forEach(item => console.log(`Comissão do ${item[0]}: R$ ${(item[1]/100) * 4}`));
+    const commitionTotal = sale.reduce((a, b) => a + (b[1]/100) * 4, 0);
+
+    return `A comissão total é: ${commitionTotal} e o ganho total é: ${fixeValue + commitionTotal}`
+}
+
+console.log(calculatorOfMoney(900, sale))
 
 
 
