@@ -177,5 +177,67 @@ const calculatorOfMoney = (fixeValue, sale) => {
 
 console.log(calculatorOfMoney(900, sale))
 
+/* ------------- */
+
+/* 
+  O restaurante DNC precisa da sua ajuda para desenvolver um sistema 
+  que ajude a calcular a taxa do garçom (gorjeta) e o valor total a ser pago, 
+  de acordo com o valor do jantar. A gorjeta sempre será 10% do valor total 
+  gasto no restaurante. 
+
+    O retorno deve seguir o exemplo abaixo:
+
+        - Valor do jantar: R$80,00
+        - Taxa do garçom: R$8,00
+        - Total a pagar: R$88,00
+*/ 
+
+const calcGorjeta = valueDinner => {
+    taxaGarçom = (valueDinner/100) * 10
+    return `Taxa do garçom: R$ ${taxaGarçom}\nTotal a pagar: R$ ${(taxaGarçom + valueDinner).toFixed(2)}`
+}
+
+console.log(calcGorjeta(80))
+
+/* ------------- */
+
+/* 
+  Dada uma string de texto, retorne quantas vogais ela possui.
+*/ 
+
+const vogals = ["a", "e", "i", "o", "u"]
+
+const countVogals = text => {
+    let count = 0;
+    text.split("").forEach(item => vogals.includes(item) ? count++ : count)
+
+    return `Há ${count} vogais dentro de '${text}'`
+}
+
+console.log(countVogals("bela"))
+
+/* ------------- */
+
+/* 
+    Dado um número de dias, mostre a quantos anos, meses e dias ele é equivalente.
+
+    Entrada:
+        920
+    Resultado:
+        2 anos, 6 meses e 2 dias
+*/ 
+
+const exactDate = day => `${Math.floor(day/365)} anos, 
+                          ${Math.floor(day % 365 / 30)} meses e 
+                          ${Math.floor((day % 365 % 30) - 1)} dias `
+
+console.log(exactDate(400))
+
+
+
+
+
+
+
 
 
