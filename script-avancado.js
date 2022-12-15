@@ -65,7 +65,7 @@ const multiplicador = [3, 7];
 const multplyBy = value => {
     const arr = new Array(9).fill(0);
     arr.forEach((item, i) => console.log(`${value[0]} x ${i + 1} = ${value[0] * (i + 1)}`))
-    arr.forEach((item, i) => console.log(`\n${value[1]} x ${i + 1} = ${value[1] * (i + 1)}`))
+    arr.forEach((item, i) => console.log(`${i===0 ? "\n" : ""}${value[1]} x ${i + 1} = ${value[1] * (i + 1)}`))
 }
 
 multplyBy(multiplicador)
